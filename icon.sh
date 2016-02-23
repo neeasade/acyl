@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+#
+# neeasade
+# extracted from included ACYL scripts.
 
 function color
 {
@@ -36,7 +39,7 @@ echo -n '<filter>
 echo -n \'
 }
 
-# Work when called from any dir
-cd $( dirname $0 )
+# Work when called from any dir, or symlinked
+cd $(dirname $([ -L $0   ] && readlink -f $0 || echo $0))/scalable/scripts
 
 source ./script_functions && eval apply_all `color $1` `gradient` `filter`
