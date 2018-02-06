@@ -30,4 +30,4 @@ HEREDOC
 cd $(dirname $([ -L $0 ] && readlink -f $0 || echo $0))/scalable/scripts
 
 . ./script_functions
-eval apply_all $(args "$1") &
+eval apply_all $(args "$1") 
